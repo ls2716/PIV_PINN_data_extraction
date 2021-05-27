@@ -15,4 +15,5 @@ Each folder contains requirements.txt file with the necessary Python packages.
 Each folder also contains additional markdown file with exact description of folder content.
 
 [Go to Nektar simulations](NektarSimulations/)
+
 [Go to PINN training](PINNTraining/)
