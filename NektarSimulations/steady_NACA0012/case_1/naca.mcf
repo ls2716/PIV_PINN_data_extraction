@@ -7,8 +7,8 @@
         </INFORMATION>
 
         <PARAMETERS>
-            <P PARAM="MinDelta" VALUE="0.05"    />
-            <P PARAM="MaxDelta" VALUE="0.5"     />
+            <P PARAM="MinDelta" VALUE="0.005"    />
+            <P PARAM="MaxDelta" VALUE="3.25"     />
             <P PARAM="EPS"      VALUE="0.05"     />
             <P PARAM="Order"    VALUE="5"       />
 
@@ -18,10 +18,10 @@
             <P PARAM="BndLayerProgression"   VALUE="1.5"     />
 
             <!-- 2D Domain !-->
-            <P PARAM="Xmin"     VALUE="-2.0"    />
-            <P PARAM="Ymin"     VALUE="-2.0"    />
-            <P PARAM="Xmax"     VALUE="5.0"     />
-            <P PARAM="Ymax"     VALUE="2.0"     />
+            <P PARAM="Xmin"     VALUE="-3.0"    />
+            <P PARAM="Ymin"     VALUE="-3.0"    />
+            <P PARAM="Xmax"     VALUE="9.0"     />
+            <P PARAM="Ymax"     VALUE="3.0"     />
             <P PARAM="AOA"      VALUE="5.0"    />
         </PARAMETERS>
 
@@ -30,22 +30,45 @@
                 <X1> -0.5 </X1>
                 <Y1> 0.0 </Y1>
                 <Z1> 0.0 </Z1>
-                <X2> 3.0 </X2>
+                <X2> 2.0 </X2>
                 <Y2> 0.0 </Y2>
                 <Z2> 0.0 </Z2>
-                <R>  0.3 </R>
+                <R>  0.5 </R>
                 <D>  0.1 </D>
-            </LINE>
-            <LINE>
-                <X1> -1 </X1>
+	          </LINE>
+	          <LINE>
+		<X1> 2.0 </X1>
                 <Y1> 0.0 </Y1>
                 <Z1> 0.0 </Z1>
-                <X2> 5.0 </X2>
+                <X2> 4.0 </X2>
                 <Y2> 0.0 </Y2>
                 <Z2> 0.0 </Z2>
-                <R>  1.0 </R>
-                <D>  0.15 </D>
+                <R>  0.8 </R>
+                <D>  0.2 </D>
             </LINE>
+	          <LINE>
+                <X1> 4.0 </X1>
+                <Y1> 0.0 </Y1>
+                <Z1> 0.0 </Z1>
+                <X2> 7.0 </X2>
+                <Y2> 0.0 </Y2>
+                <Z2> 0.0 </Z2>
+                <R>  1.4 </R>
+                <D>  0.40 </D>
+            </LINE>
+	          <LINE>
+                <X1> 7.0 </X1>
+                <Y1> 0.0 </Y1>
+                <Z1> 0.0 </Z1>
+                <X2> 9.0 </X2>
+                <Y2> 0.0 </Y2>
+                <Z2> 0.0 </Z2>
+                <R>  2.0 </R>
+                <D>  0.55 </D>
+            </LINE>
+
+
+
 
         </REFINEMENT>
 

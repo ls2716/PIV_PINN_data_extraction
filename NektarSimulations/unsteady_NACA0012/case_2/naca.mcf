@@ -22,7 +22,7 @@
             <P PARAM="Ymin"     VALUE="-4.0"    />
             <P PARAM="Xmax"     VALUE="11.0"     />
             <P PARAM="Ymax"     VALUE="4.0"     />
-            <P PARAM="AOA"      VALUE="5.0"    />
+            <P PARAM="AOA"      VALUE="15.0"    />
         </PARAMETERS>
 
         <REFINEMENT>
