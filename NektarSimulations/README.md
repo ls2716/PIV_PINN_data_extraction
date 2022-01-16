@@ -13,14 +13,14 @@ For each flow case, there is a folder which contains:
 - 6 folders with convergence cases with Nektar++ simulation definition file and mesh definition file, as well as otput file with forces vs iteration,
 - convergence plot folder that contains the code for plotting the convergence plots from the forces data,
 - data_analysis_transformation folder with code for output data analysis and transformation,
-- the unsteady cases additionally have a rerun case to gain the mean flow data.
+- the unsteady cases additionally have a rerun case to gather the mean flow data.
 
 Additionally, the cylinder contains cyl.stp file which contains cylinder geometry definition used by Nekar++ mesher.
 
 ## Simulation procedure
 
-1. Nektar++ simulations wre performed.
-2. Convergence was plotted using plot.py file in convergence_plots folder.
+1. Nektar++ simulations were performed.
+2. Convergence plot was created using plot.py script in convergence_plots folder.
 3. (unsteady) cycle_analysis.py was used to find cycle length expressed in iterations.
 4. (unsteady) Additional rerun was performed with mean data filter.
 5. point_gen.py file was used to define points for field interpolation.
