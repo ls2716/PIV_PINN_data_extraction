@@ -10,7 +10,7 @@ There are three flow cases:
 
 and additional easy pde check case.
 
-For each flow case and the additional case, there is a folder which contains codes for all PINN regressions done the specific case. The data folder should contain the input data as output from data transformation scripts in the Nektar++ simulations part.
+For each flow case and the additional case, there is a folder which contains codes for all PINN regressions done for the specific case (steady/unsteady NACA/ cylinder). The data folder should contain the simulation data - output from data transformation scripts in the Nektar++ simulations part.
 
 Each code outputs a folder with results of the regressions along with a .mat file with predicted fields that can be plotted separately.
 
