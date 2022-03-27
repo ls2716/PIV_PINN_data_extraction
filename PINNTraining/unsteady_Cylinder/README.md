@@ -22,7 +22,7 @@ The PINN experiment procedure is as follows:
 10. Perform NN training.
 11. Test the obtained neural network mapping.
 
-The scripts include an option to only run training or testing should that be necessary. By default, both actions are performed - neural network is trained and then the mapping is tested.
+The scripts include an option to only run training or testing should that be necessary. By default, both actions are performed - neural network is trained and then the obtained mapping is tested.
 
 ### Unsteady cylinder cases description.
 
@@ -39,11 +39,11 @@ The scripts include an option to only run training or testing should that be nec
     - Boundary conditions: forcing and velocities are 0 at the cylinder surface.
     - PIV data: PIV data contains mean velocities with resolution 0.5x0.5.
 - case_unCyl_piv_51 
-    - This case corresponds to regression using the expanded formulation of the RANS equation that includes the Reynoolds stresses and with PIV data containing the 2nd order statistics of the velocity i.e. Reynolds stresses.
+    - This case corresponds to regression using the expanded formulation of the RANS equation that includes the Reynolds stresses and with PIV data containing the 2nd order statistics of the velocity i.e. Reynolds stresses.
     - Boundary conditions: forcing and velocities are 0 at the cylinder surface.
     - PIV data: PIV data contains mean velocities and Reynolds stresses with resolution 0.5x0.5.
 - case_unCyl_piv_47 
-    - This case corresponds to superresolution using the expanded formulation of the RANS equation that includes the Reynoolds stresses, PIV data containing the 2nd order statistics of the velocity i.e. Reynolds stresses and the pressure data over the cylinder surface.
+    - This case corresponds to superresolution using the expanded formulation of the RANS equation that includes the Reynolds stresses, PIV data containing the 2nd order statistics of the velocity i.e. Reynolds stresses and the pressure data over the cylinder surface.
     - Boundary conditions: forcing and velocities are 0 at the cylinder surface.
     - PIV data: PIV data contains mean velocities and Reeynolds stresses with resolution 0.5x0.5.
     - Pressure data: pressure values over the cylinder surface.
