@@ -8,7 +8,7 @@ import os
 import matplotlib.pyplot as plt
 
 
-fs = 27
+fs = 20
 plt.rc('font', size=fs) #controls default text size
 plt.rc('axes', titlesize=fs) #fontsize of the title
 plt.rc('axes', labelsize=fs) #fontsize of the x and y labels
@@ -118,21 +118,28 @@ if __name__=="__main__":
     Ny = int((v_ru[1]-v_ld[1])*500)+1
     print('Nx', Nx, 'Ny', Ny)
 
-    figsize = (8,9)
+    figsize = (8,5)
 
     predictions = scipy.io.loadmat(f"./{case_name}/results.mat")
     true_data = scipy.io.loadmat("./Data/unsteadyCylinder_full_field.mat")
-    true_velo_forcings = scipy.io.loadmat("./Data/forcing_velo.mat")
-    true_data.update(true_velo_forcings)
+    # true_velo_forcings = scipy.io.loadmat("./Data/forcing_velo.mat")
+    # true_data.update(true_velo_forcings)
 
-    # x_piv_super = np.linspace(-1, 3, 9)
-    # y_piv_super = np.linspace(-1.25, 1.25, 6)
-    # super_points = []
-    # for x in x_piv_super:
-    #     for y in y_piv_super:
-    #         super_points.append([x,y])
-    # super_points = np.array(super_points)
-    # print(super_points)
+    x_piv_super = np.linspace(-1, 3, int(4/0.05)+1)
+    y_piv_super = np.linspace(-1.5, 1.5, int(3/0.05)+1)
+
+    x_piv_super = np.linspace(-1, 3, int(4/0.6)+1)
+    y_piv_super = np.linspace(-1.5, 1.5, int(3/0.6)+1)
+
+    x_piv_super = np.linspace(-1, 3, int(4/1)+1)
+    y_piv_super = np.linspace(-1.5, 1.5, int(3/1)+1)
+
+    super_points = []
+    for x in x_piv_super:
+        for y in y_piv_super:
+            super_points.append([x,y])
+    super_points = np.array(super_points)
+    print(super_points)
     # plt.scatter(super_points[:,0], super_points[:,1])
     # plt.show()
 
@@ -176,10 +183,10 @@ if __name__=="__main__":
     X, Y = np.meshgrid(x_plot, y_plot)
 
     keys_to_plot = predictions.keys()
-    keys_to_plot = ["uu_star"]
+    keys_to_plot = ["u_star", "v_star"]
     # keys_to_plot = ["vv_star", "uv_star"]
-    keys_to_plot = ["curlf"]
-    keys_to_plot = ["curlfalt","curlfalt1st","curlfalt2nd"]
+    # keys_to_plot = ["curlf"]
+    # keys_to_plot = ["curlfalt","curlfalt1st","curlfalt2nd"]
 
     for key in predictions.keys():
         if key[0] in ['_', 'x', 'y']:
@@ -220,18 +227,18 @@ if __name__=="__main__":
             plt.figure(figsize=figsize)
             print('Max error', np.max(np.abs(to_plot-true_plot)))
             f_max = np.percentile(np.abs(to_plot-true_plot), 99)
-            plt.title(r"(a) $\mathbf{f}$ form., "+names_dict.get(key.split('_')[0]))
+            # plt.title(r"(a) $\mathbf{f}$ form., "+names_dict.get(key.split('_')[0]))
             plt.pcolor(X, Y, np.abs(to_plot-true_plot), vmin=0, vmax=f_max)
             # plt.pcolor(X, Y, np.abs(to_plot-true_plot))
-            plt.colorbar(label='abs error')
-            # plt.scatter(super_points[:,0], super_points[:,1], c='red')
-            # plt.title()
+            name = names_dict[key.split('_')[0]]
+            plt.colorbar(label=f'{name} abs error')
+            plt.scatter(super_points[:,0], super_points[:,1], s=40, c='red')
             plt.scatter(x_ar, y_ar, s=0.05, c='white')
             plt.plot(cylinder_array[:,0], cylinder_array[:,1], lw=1.5, c='black')
             plt.xlabel('x/c')
             plt.ylabel('y/c')
             axes=plt.gca()
-            if key=="curlfalt2nd":
+            if key=="v_star":
                 axes.yaxis.label.set_color('white')
                 [t.set_color('white') for t in axes.yaxis.get_ticklabels()]
             # axes.xaxis.label.set_color('white')
